@@ -28,6 +28,10 @@ class LocaleHelper {
         $this->locales = config(EabUtilServiceProvider::CONFIG_FILENAME . ".locales");
     }
     
+    /**
+     * Get singleton instance
+     * @return LocaleHelper
+     */
     public static function getInstance() {
         if (!isset(self::$instance)) {
             self::$instance = new LocaleHelper();
@@ -81,7 +85,7 @@ class LocaleHelper {
      * @return string
      */
     public function getDefaultLocale() {
-        return config("app.locale");
+        return config(EabUtilServiceProvider::CONFIG_FILENAME . ".default_locale");
     }
 
 }

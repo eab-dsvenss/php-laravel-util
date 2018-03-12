@@ -27,6 +27,10 @@ class UrlHelper
         $this->localeHelper = LocaleHelper::getInstance();
     }
 
+    /**
+     * Return singleton instance
+     * @return UrlHelper
+     */
     public static function getInstance()
     {
         if (!isset(self::$instance)) {

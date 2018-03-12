@@ -7,5 +7,6 @@
  */
 
 return [
-    "locales" => ["en", "sv"]
+    "locales" => ["en", "sv"],
+    "default_locale" => "sv"
 ];
