@@ -1,11 +1,10 @@
 {
-    "name": "eab/php-laravel-util",
+    "name": "eab-dsvenss/php-laravel-util",
     "description": "PHP Util classes",
     "type": "library",
     "authors": [
         {
-            "name": "Daniel Svensson",
-            "email": "daniel@eskeliden.se"
+            "name": "Daniel Svensson"
         }
     ],
     "autoload": {
