@@ -8,7 +8,7 @@
 
 namespace se\eab\php\laravel\util\url;
 
-use Illuminate\Http\Request;
+use se\eab\php\laravel\util\url\RedirectContainer;
 
 /**
  * Description of UrlHandler
@@ -17,18 +17,20 @@ use Illuminate\Http\Request;
  */
 class UrlHelper
 {
+
     private static $instance;
 
     private function __construct()
     {
         
     }
-    
-    public static function getInstance() {
+
+    public static function getInstance()
+    {
         if (!isset(self::$instance)) {
             self::$instance = new UrlHelper();
         }
-        
+
         return self::$instance;
     }
 
@@ -44,18 +46,17 @@ class UrlHelper
 
     /**
      * Redirects to path with or without querystring
-     * @param Request $request
-     * @param string $path
-     * @param boolean $withQuery
-     * @return redirect
+     * @param RedirectContainer $container
      */
-    public function performRedirect(Request &$request, $path, $withQuery, $forceSSL)
+    public function performRedirect(RedirectContainer $container)
     {
+        $path = $container->getRedirectpath();
+        $request = $container->getRequest();
         $request->flash();
-        if ($withQuery) {
+        if ($container->shouldIncludeQuery()) {
             $path .= $this->getQueryStringFromRequest($request);
         }
-        if ($forceSSL) {
+        if ($container->shouldForceSSL()) {
             return redirect()->secure($path);
         } else {
             return redirect($path);
