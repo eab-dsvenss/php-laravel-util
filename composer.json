@@ -1,0 +1,16 @@
+{
+    "name": "eab/php-laravel-util",
+    "description": "PHP Util classes",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Daniel Svensson",
+            "email": "daniel@eskeliden.se"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"se\\eab\\php\\laravel\\util\\": "src/"}
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
