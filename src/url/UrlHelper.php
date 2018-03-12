@@ -43,6 +43,15 @@ class UrlHelper
     {
         return $request->getQueryString() ? "?" . $request->getQueryString() : "";
     }
+    
+    /**
+     * Returns the requested locale
+     * @param Request $request
+     * @return string
+     */
+    public function getRequestLocale(Request $request) {
+        return $request->segment(1);
+    }
 
     /**
      * Redirects to path with or without querystring
