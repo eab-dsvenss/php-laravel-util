@@ -11,5 +11,9 @@
         "psr-4": {"se\\eab\\php\\laravel\\util\\": "src/"}
     },
     "minimum-stability": "dev",
-    "require": {}
+    "prefer-stable": true,
+    "require": {},
+    "require-dev": {
+        "codeception/codeception": "^2.4"
+    }
 }
